@@ -13,13 +13,14 @@
 </head>
 <body>
     <h2>Add Employee</h2>
-
-    <input type="text" placeholder="First Name" id="firstName">
-    <input type="text" placeholder="Last Name" id="LastName">
-    <input type="text" placeholder="ID" id="iD">
-    <input type="text" placeholder="Title" id="title">
-    <input type="text" placeholder="Annal Salary" id="annSalary">
-        <button id="submitB">Submit</button>
+    <div id="employeeForm">
+        <input type="text" placeholder="First Name" id="firstName">
+        <input type="text" placeholder="Last Name" id="lastName">
+        <input type="text" placeholder="ID" id="iD">
+        <input type="text" placeholder="Title" id="title">
+        <input type="text" placeholder="Annal Salary" id="annSalary">
+            <button id="submitB">Submit</button>
+    </div>
 
     <div id="">
         <h2>Employees</h2>
@@ -37,8 +38,9 @@
 
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
+                <td><ul id="appendingEmp"></ul></td>
+                <td id="appendEmployee"></td>
+               
             </tr>
         </tbody>
 
