@@ -3,7 +3,9 @@ console.log("hello world!");
 
 $(document).ready(onReady);
 
-let employeeinfo = ['dogs','cats', 'birds']
+let employeeinfo = []
+
+// 'dogs','cats', 'birds'
 
 function onReady(){
     console.log('hello from jQuery')
@@ -12,10 +14,13 @@ function onReady(){
     
     // $('#appendingEmp').append('<td>hello</td>')
 
+    $('#submitB').on('click', submitForm); //event listener
+
    
         // descendant selector
-    $('#appendingEmp').on('click', '.deleteBtn', deleteFunc);
+    $('#appendingEmp').on('click', '.deleteBtn', deleteFunc); // this is saying any child li's made will carry this deletefunction.
 
+ 
 
 }
 
@@ -41,7 +46,7 @@ function buttonClicked(){
 
     for (let i = 0 ; i < employeeinfo.length; i++){ 
         ulEmployees.append(
-            `<td>  ${employeeinfo[i]}
+            `<td>  ${employeeinfo[i].nameKey} ${employeeinfo[i].lastNKey}
                  <button class= "deleteBtn"> DELETE </button> 
             </td>`);
     }
@@ -71,9 +76,13 @@ function submitForm() {
     let Salary = $('#annSalary').val();
     console.log('Salary: ', Salary)
 
-   $('#name').val('') // this is an ex. of using .val as a setter
-   $('#title').val('')
+    $('#firstName').val(''); // this is going to display the placesholders as empty.
+    $('#lastName').val('');
+    $('#iD').val('');
+    $('#title').val('');
+    $('#annSalary').val('');
 
+   
     let newEmployee = {
         nameKey: name,
         lastNKey: lastname,
@@ -83,5 +92,6 @@ function submitForm() {
     }
 
     employeeinfo.push(newEmployee)
+
 
 }
