@@ -5,17 +5,17 @@ $(document).ready(onReady);
 
 let employeeinfo = []
 
-// 'dogs','cats', 'birds'
+
 
 function onReady(){
     console.log('hello from jQuery')
 
-    $('#submitB').on('click', buttonClicked); //event listener | this is 'listening for click action. then it will run function.
-    
-    // $('#appendingEmp').append('<td>hello</td>')
-
     $('#submitB').on('click', submitForm); //event listener
 
+
+    $('#submitB').on('click', buttonClicked); //event listener | this is 'listening for click action. then it will run function.
+    
+  
    
         // descendant selector
     $('#appendingEmp').on('click', '.deleteBtn', deleteFunc); // this is saying any child li's made will carry this deletefunction.
@@ -25,26 +25,30 @@ function onReady(){
 
 function deleteFunc(){
     console.log("delete");
-    $(this).parent().remove(); // the this event is saying I when x item is clicked do .remove()
+    $(this).parent().parent().remove(); // the this event is saying I when x item is clicked do .remove()
 }
 
 
 
 
 function buttonClicked(){
-    console.log('the button was clicked!')
+    console.log('buttonClicked Func');
 
     let ulEmployees = $("#appendingEmp");
 
     for (let i = 0 ; i < employeeinfo.length; i++){ 
+        console.log("woot");
+        
         ulEmployees.append(`
-          <td> ${employeeinfo[i].nameKey} </td>
-          <td> ${employeeinfo[i].lastNKey} </td>
-          <td> ${employeeinfo[i].IDKey}</td> 
-          <td> ${employeeinfo[i].titleKey}</td> 
-          <td> ${employeeinfo[i].AnnSalary}</td> 
-          <td> <button class= "deleteBtn"> DELETE </button> </td>`);
-
+        <tr> 
+            <td> ${employeeinfo[i].nameKey} </td>
+            <td> ${employeeinfo[i].lastNKey} </td>
+            <td> ${employeeinfo[i].IDKey}</td> 
+            <td> ${employeeinfo[i].titleKey}</td> 
+            <td> ${employeeinfo[i].AnnSalary}</td> 
+            <td> <button class= "deleteBtn"> DELETE </button> </td>
+        </tr>`);
+            
     }
 
 }
@@ -55,7 +59,7 @@ function buttonClicked(){
 
 
 function submitForm() {
-    console.log('clicking the submit button');
+    console.log('clicking the submitfunc');
     // this is where I want to grab input values;
     // getter .val()
     // setter .val('fills in')
