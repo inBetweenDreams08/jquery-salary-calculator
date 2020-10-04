@@ -20,8 +20,6 @@ function onReady(){
         // descendant selector
     $('#appendingEmp').on('click', '.deleteBtn', deleteFunc); // this is saying any child li's made will carry this deletefunction.
 
- 
-
 }
 
 
@@ -33,25 +31,27 @@ function deleteFunc(){
 
 
 
-
-
-
-
-
-
 function buttonClicked(){
     console.log('the button was clicked!')
 
     let ulEmployees = $("#appendingEmp");
 
     for (let i = 0 ; i < employeeinfo.length; i++){ 
-        ulEmployees.append(
-            `<td>  ${employeeinfo[i].nameKey} ${employeeinfo[i].lastNKey}
-                 <button class= "deleteBtn"> DELETE </button> 
-            </td>`);
+        ulEmployees.append(`
+          <td> ${employeeinfo[i].nameKey} </td>
+          <td> ${employeeinfo[i].lastNKey} </td>
+          <td> ${employeeinfo[i].IDKey}</td> 
+          <td> ${employeeinfo[i].titleKey}</td> 
+          <td> ${employeeinfo[i].AnnSalary}</td> 
+          <td> <button class= "deleteBtn"> DELETE </button> </td>`);
+
     }
 
 }
+
+
+
+
 
 
 function submitForm() {
