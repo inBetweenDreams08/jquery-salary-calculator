@@ -13,7 +13,7 @@ function onReady(){
     $('#submitB').on('click', submitForm); //event listener
 
 
-    $('#submitB').on('click', appendfunc); //event listener | this is 'listening for click action. then it will run function.
+    // $('#submitB').on('click', appendfunc); // event listener| leaving for learning purposes | this is 'listening for click action. then it will run function.
     
   
         // descendant selector
@@ -59,8 +59,10 @@ function submitForm() {
         AnnSalary: Salary
     }
 
-    employeeinfo.push(newEmployee)
+    employeeinfo.push(newEmployee) // this is going to store the employee into the array above. 
 
+
+    appendfunc(newEmployee); // this going to send the newemployee info the the appendfunc. 
 
 }
 
@@ -75,17 +77,17 @@ function submitForm() {
 
 
 
-function appendfunc(){
+function appendfunc(employee){
 
-    let ulEmployees = $("#appendingEmp");
+    let employeeTable = $("#appendingEmp");
 
-    ulEmployees.append(`
+    employeeTable.append(`
     <tr> 
-        <td> ${employeeinfo[i].nameKey} </td>
-        <td> ${employeeinfo[i].lastNKey} </td>
-        <td> ${employeeinfo[i].IDKey}</td> 
-        <td> ${employeeinfo[i].titleKey}</td> 
-        <td> $ ${employeeinfo[i].AnnSalary}</td> 
+        <td> ${employee.nameKey} </td>
+        <td> ${employee.lastNKey} </td>
+        <td> ${employee.IDKey}</td> 
+        <td> ${employee.titleKey}</td> 
+        <td> $ ${employee.AnnSalary}</td> 
         <td> <button class= "deleteBtn"> DELETE </button> </td>
     </tr>`);
         
