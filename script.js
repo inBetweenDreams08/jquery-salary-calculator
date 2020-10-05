@@ -28,7 +28,7 @@ function submitForm() {
     // getter .val()
     // setter .val('fills in')
 
-
+ // this is going to display in the .log the inputs for the object.
     let name = $('#firstName').val();
     console.log('fistname: ', name);
 
@@ -81,6 +81,7 @@ function appendfunc(employee){
 
     let employeeTable = $("#appendingEmp");
 
+    // this is going to append the items which will be show on the screen once the submit button is clicked. 
     employeeTable.append(`
     <tr> 
         <td> ${employee.nameKey} </td>

@@ -6,7 +6,7 @@ h2{
 background-color: #375d6b;
 padding: 30px;
 color: #c25e07;
-border-bottom: #c25e07 : 
+border-bottom: 4px solid #c25e07; 
 }
 
 div .headerForTable{
@@ -15,7 +15,8 @@ margin: 20px;
 
 table th{
 text-align: left;
-background-color: #a7d0e0 ;
+background-color: #375d6b ;
+color: #c25e07;
 border: 2px solid #000000;
 padding: 4px 30px 4px 8px;
 
